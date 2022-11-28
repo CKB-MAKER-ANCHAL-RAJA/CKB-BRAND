@@ -82,53 +82,6 @@ def banner():
                               __/ |                               
                              |___/                                                   
 """%(N))                                                    
-───────────────────────────────────────────────────────
- [\x1b[1;96m+%s] Nama       : xvr anony
- [\x1b[1;96m+%s] Github      : https://github.com/Anonymouse
-───────────────────────────────────────────────────────\n'''%(N,N,N,N))
-def kontol():
-    os.system("clear")
-    print(f""" 
-.____    .__                            .__ 
-|    |   |__| ______ ____   ____   _____|__|
-|    |   |  |/  ___// __ \ /    \ /  ___/  |
-|    |___|  |\___ \\  ___/|   |  \\___ \|  |
-|_______ \__/____  >\___  >___|  /____  >__|
-        \/       \/     \/     \/     \/                                                                                                    
-{P}[•]{B}----------------------------------------------------{P}[•]
-{B} |
-{P}[•] AUTHOR: Anony mouse""")
-def licensi():#line:42
-  try :#line:43
-    os .system ('clear')
-    kontol()
-    print (f"""
-{U}[{P}1{U}]{P} Beli Lisensi
-{U}[{P}2{U}]{P} Masukan Masukan Lisensi
-{U}[{P}3{U}]{P} Keluar {U}[{H}Exit{U}]{H}
-""")#line:49
-    OOO00O0OOO00OO00O =input (f"{H}[{P}?{H}]{P} ===> Pilih :{K} ")#line:50
-    if OOO00O0OOO00OO00O in ['1','01']:#line:51
-      print (f"{H}[{P}!{H}]{P} Anda Akan Diarahkan Ke Whatsapp...");time .sleep (3 );os .system ('xdg-open https://wa.me/6283865283286?text=Bang+Beli+Lisensi+nya+dong.......???????');exit ()#line:52
-    elif OOO00O0OOO00OO00O in ['2','02']:#line:53
-      O000O000OOO000OOO =input (f"{H}[{P}?{H}]{P} Api Key :{K} ")#line:54
-      if len (O000O000OOO000OOO )==0 :#line:55
-        exit (f"{P}[{M}!{P}]{M} Jangan Kosong Tolol")#line:56
-      else :#line:57
-        with requests .Session ()as O0O0OO0O0O00OOOO0 :#line:58   #### ISI TOKEN LU DAN   ID LU
-          OOO00OO00O0O0OOOO =O0O0OO0O0O00OOOO0 .get(f'https://app.cryptolens.io/api/key/activate?token=WyIxNjk4MzkyOCIsIktFWUhHaUJzQkZzcEpTdXFRMXh0ZUh3U0crOWpyNk9LM1ZWV0xSQlkiXQ==&ProductId=14877&Key={O000O000OOO000OOO}&Sign=True').json ()['licenseKey']#line:59
-          open ('apikey.txt','w').write (O000O000OOO000OOO )#line:60
-          print (f"{H}[{P}*{H}]{P} Expired :{K} {OOO00OO00O0O0OOOO['expires'].split('T')[0]}");time .sleep (2 );login()#line:61
-    elif OOO00O0OOO00OO00O in ['3','03']:#line:62
-      exit ()#line:63
-    else :#line:64
-      exit (f"{P}[{M}!{P}]{M} Wrong Input")#line:65
-  except (KeyError ):#line:66
-    exit (f"{P}[{M}!{P}]{M} Lisensi Invalid")#line:67
-  except Exception as O0OO00OOO000OOO00 :#line:68
-    exit (f"{P}[{M}!{P}]{M} {O0OO00OOO000OOO00}")#line:69
-
-balmond = O+"["+J+"•"+O+"]"
 
 def login():
 		try:
