@@ -368,7 +368,7 @@ class __bsn__:
                         day   = ''
                         year  = ''
                     except:pass
-                    print('\r%s \033[1;94m[SSG~ CP| %s | %s ' % (K,user,pw))
+                    print('\r%s \033[1;94m('SSG~ CP| %s | %s ' % (K,user,pw))
                     wrt = '%s|%s' % (user,pw)
                     cp.append(wrt)
                     open('SSG~ cp.txt' , 'a').write('%s\n' % wrt)
