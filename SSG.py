@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#-*-coding:utf-8-*-
+#-*-coding:utf-8-*-up u
 # Update V1.7
 
 ### Import Module
@@ -274,7 +274,7 @@ class __bsn__:
                     cp_ttl = requests.get('https://graph.facebook.com/%s?fields=birthday&access_token=%s'%(user,kontol)).json()['birthday']
                     month, day, year = cp_ttl.split('/')
                     month = bulan_ttl[month]
-                    print('\r%s \033[1;94m[SSG~ |CP| %s | %s ' % (K,user,pw))
+                    print('\r%s \033[1;94m[SSG~|CP| %s | %s ' % (K,user,pw))
                     wrt = '%s|%s' % (user,pw)
                     cp.append(wrt)
                     open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
@@ -285,7 +285,7 @@ class __bsn__:
                     year  = ''
                 except:
                     pass
-                print('\r%s \033[1;94m[SSG~ |CP| %s | %s ' % (K,user,pw))
+                print('\r%s \033[1;94m[SSG~|CP| %s | %s ' % (K,user,pw))
                 wrt = '%s|%s' % (user,pw)
                 cp.append(wrt)
                 open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
