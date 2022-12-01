@@ -17,44 +17,8 @@ def aink(s):
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(1./300)
+           
 
-time.sleep(0.1)
-os.system("clear")
-print("\x1b[1;97m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-print("\x1b[1;97m┃╔═❲  Only Admin Chekout Api Key 082151858918  ❳═>")
-print("\x1b[1;97m┃╚═════════════════════════════════")
-print("\x1b[1;97m┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-print("\x1b[1;97m┃╔═❲ List Harga Api Key Tools️ ❳═>")
-print("\x1b[1;97m┃║• Api Key Mingguan : 30K")
-print("\x1b[1;97m️┃║• Api Key 1 Bulan : 60K")
-print("\x1b[1;97m┃║• Api Key 2 Bulan : 80K")
-print("\x1b[1;97m┃║• Api Key Pertahun : 150K")
-#print("\x1b[1;97m┃║• Upgrade Ke Pro : 200K")️
-print("\x1b[1;97m┃╚═════════════════════════════════")
-print("\x1b[1;97m┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-print("\x1b[1;97m┃╔═❲ Litst Harga Sorce Code️ ❳═>")
-print("\x1b[1;97m┃║• Harga File Open code : 200K️")
-print("\x1b[1;97m┃╚═════════════════════════════════")
-print("\x1b[1;97m┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-
-input("\n\x1b[1;97m--> Masukan Api Key Anda Yang Sudah Terdaftar --> Enter")
-Password = "GYHSJHdJNSHSHSH" # --> Data Req Api key --> open_kt(life)("GYHSJHdJNSHSHSH")
-
-loop = 'true'
-while (loop == 'true'):
-    passcode = input("\x1b[1;97m--> Validasi Api Key ? : ")
-    if (passcode == Password):
-            loop = 'false'
-            time.sleep(5.0)
-            print("\n \x1b[1;97m--> Mengecek Api key... ")
-            time.sleep(6.0)
-            print("\n \x1b[1;92m--> Api Key Anda Valid ")          
-    else:
-            exit("\033[93m--> Api Key Anda Expire")
-            
-            
-            
-            
 # ==========[Bagian Import]==========            
 import requests,bs4,json,os,sys,random,datetime,time,re,subprocess
 try:
