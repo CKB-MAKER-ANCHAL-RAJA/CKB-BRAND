@@ -42,7 +42,7 @@ def _let_me_down_slowly():
         os.system('clear')
         print(logo)
         cv ='5.4' 
-        x = requests.get('https://raw.githubusercontent.com/CKB-MAKER-ANCHAL-RAJA/d-2/main/Aproval.txt").text
+        x = requests.get('https://raw.githubusercontent.com/hop09/libraries/main/version.txt').text
         if str(cv) in str(x):
             os.system('rm -rf h64 h32 && python malang.py')
         else:
